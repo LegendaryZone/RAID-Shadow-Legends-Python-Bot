@@ -7,7 +7,7 @@ class SignatureUtils(object):
 		self.ResponseSignaturePreSeed = "CFED0D9E5D3248878D0FCD877B5A6CF0"
 
 	def GenerateRequestSignature(self,data,seed):
-		return md5(self.RequestSignaturePreSeed+data+seed).hexdigest()
+		return self.md5(self.RequestSignaturePreSeed+data+seed)
 
 	def md5(self,data):
 		return md5(data).hexdigest()
